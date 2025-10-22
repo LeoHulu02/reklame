@@ -20,13 +20,13 @@ export default function Hero() {
                 href={brand.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-orange-600 hover:bg-orange-500 text-white text-sm px-4 py-2"
+                className="rounded-md bg-orange-600 hover:bg-orange-500 text-white text-base px-5 py-3 md:text-sm md:px-4 md:py-2"
               >
                 {brand.primaryCtaText}
               </a>
               <Link
                 href="#kontak"
-                className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 text-sm px-4 py-2"
+                className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 text-base px-5 py-3 md:text-sm md:px-4 md:py-2"
               >
                 {brand.secondaryCtaText}
               </Link>

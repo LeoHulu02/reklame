@@ -20,7 +20,7 @@ export type ProductProps = {
 export default function ProductSection({ id, title, description, features, image }: ProductProps) {
   return (
     <section id={id} className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
-      <div className="mx-auto max-w-6xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{title}</h2>

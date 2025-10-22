@@ -10,7 +10,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <section id="faq" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
-      <div className="mx-auto max-w-6xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">FAQ</h2>
         <div className="mt-6 divide-y divide-zinc-800/60 border border-zinc-800/60 rounded-md">
           {items.map((item, idx) => {

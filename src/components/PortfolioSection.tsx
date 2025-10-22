@@ -9,7 +9,7 @@ export type PortfolioItem = {
 export default function PortfolioSection({ items }: { items: PortfolioItem[] }) {
   return (
     <section id="portfolio" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
-      <div className="mx-auto max-w-6xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <div className="flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Portfolio</h2>
         </div>

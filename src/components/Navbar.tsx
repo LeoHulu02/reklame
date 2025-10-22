@@ -5,7 +5,7 @@ import { brand } from "@/lib/config";
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-gray-950/85 backdrop-blur supports-[backdrop-filter]:bg-gray-950/75">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         <Link href="#" className="text-zinc-100 font-semibold tracking-tight">
           {brand.name}
         </Link>

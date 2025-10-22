@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   return (
     <section id="kontak" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
-      <div className="mx-auto max-w-6xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
           Hubungi Kami
         </h2>

@@ -83,9 +83,12 @@ export default function Home() {
   ];
 
   const testimonials = [
-    { name: "Andi", role: "Owner UMKM", quote: "Tim cepat dan hasil sangat rapi." },
-    { name: "Sinta", role: "Marketing Lead", quote: "Desain tajam, produksi on-time, recommended!" },
-    { name: "Budi", role: "Brand Manager", quote: "Kolaborasi enak, quality control mantap." },
+    { name: "Anugerah Laia", quote: "Pelayanan cepat dan hasil sangat rapi." },
+    { name: "Helisia Hulu", quote: "Desain tajam, produksi tepat waktu, recommended!" },
+    { name: "Reftalenta Laia", quote: "Responsif dan pengerjaan profesional." },
+    { name: "Mercy Laia", quote: "Kualitas bahan bagus, pemasangan rapi." },
+    { name: "Mekar Hulu", quote: "Harga bersaing, hasil memuaskan." },
+    { name: "Noliana Buulolo", quote: "Proses dari desain hingga pemasangan mulus." },
   ];
 
   const faqItems = [

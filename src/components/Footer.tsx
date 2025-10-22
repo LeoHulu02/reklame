@@ -8,7 +8,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Reklame. Semua hak dilindungi.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <Link href="#" className="hover:text-zinc-100 transition-colors">
               Kebijakan Privasi
             </Link>

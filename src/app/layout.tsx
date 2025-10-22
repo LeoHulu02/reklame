@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-950 text-zinc-100 overflow-x-hidden`}
       >
         {/* Navbar akan diimport di page atau dipasang di sini nanti */}
         {children}

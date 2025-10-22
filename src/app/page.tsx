@@ -1,65 +1,128 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import ProductSection from "@/components/ProductSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 export default function Home() {
+  const products = [
+    {
+      id: "reklame-motor",
+      title: "Reklame Motor",
+      description:
+        "Branding armada motor dengan stiker/vinyl premium yang tahan cuaca dan anti gores.",
+      features: [
+        { label: "Desain presisi sesuai bodi motor" },
+        { label: "Material vinyl outdoor berkualitas" },
+        { label: "Laminasi matte/glossy anti gores" },
+        { label: "Pemasangan rapi oleh profesional" },
+      ],
+      image: {
+        src: "https://images.pexels.com/photos/15014561/pexels-photo-15014561.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1",
+        alt: "Reklame Motor",
+      },
+    },
+    {
+      id: "reklame-helm",
+      title: "Reklame Helm",
+      description:
+        "Personalisasi helm dengan desain kontur yang tajam, aman, dan berkelas.",
+      features: [
+        { label: "Kustom desain mengikuti kontur helm" },
+        { label: "Bahan vinyl premium tahan cuaca" },
+        { label: "Finishing halus: matte atau glossy" },
+        { label: "Warna akurat dan awet" },
+      ],
+      image: {
+        src: "https://images.pexels.com/photos/12000109/pexels-photo-12000109.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1",
+        alt: "Reklame Helm",
+      },
+    },
+    {
+      id: "reklame-mantel",
+      title: "Reklame Mantel",
+      description:
+        "Mantel promosi untuk event atau brand activation dengan bahan kuat dan nyaman.",
+      features: [
+        { label: "Cetak tajam untuk identitas brand" },
+        { label: "Bahan kuat, nyaman dipakai" },
+        { label: "Custom ukuran dan jumlah besar" },
+        { label: "Lead time cepat dan terukur" },
+      ],
+      image: {
+        src: "https://images.pexels.com/photos/15894619/pexels-photo-15894619.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1",
+        alt: "Reklame Mantel",
+      },
+    },
+    {
+      id: "papan-merek",
+      title: "Papan Merek",
+      description:
+        "Papan nama toko/brand signage dari material ACP/akrilik dengan opsi LED dan instalasi aman.",
+      features: [
+        { label: "Material ACP/akrilik berkualitas" },
+        { label: "Opsi pencahayaan LED" },
+        { label: "Struktur kuat dan tahan lama" },
+        { label: "Instalasi aman sesuai standar" },
+      ],
+      image: {
+        src: "https://images.pexels.com/photos/6510373/pexels-photo-6510373.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1",
+        alt: "Papan Merek",
+      },
+    },
+  ];
+
+  const portfolioItems = [
+    { title: "Armada Motor — Kampanye A", image: "https://images.pexels.com/photos/15014561/pexels-photo-15014561.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" },
+    { title: "Helm — Aktivasi B", image: "https://images.pexels.com/photos/12000109/pexels-photo-12000109.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" },
+    { title: "Mantel — Event C", image: "https://images.pexels.com/photos/15894619/pexels-photo-15894619.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" },
+    { title: "Papan Merek — Toko D", image: "https://images.pexels.com/photos/6510373/pexels-photo-6510373.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" },
+  ];
+
+  const testimonials = [
+    { name: "Andi", role: "Owner UMKM", quote: "Tim cepat dan hasil sangat rapi." },
+    { name: "Sinta", role: "Marketing Lead", quote: "Desain tajam, produksi on-time, recommended!" },
+    { name: "Budi", role: "Brand Manager", quote: "Kolaborasi enak, quality control mantap." },
+  ];
+
+  const faqItems = [
+    { q: "Berapa lama proses produksi?", a: "Tergantung skala, rata-rata 3–7 hari kerja." },
+    { q: "Apakah ada survey lokasi?", a: "Ya, untuk signage/papan merek kami lakukan survey." },
+    { q: "Apakah menerima revisi?", a: "Ya, revisi ringan untuk memastikan hasil sesuai harapan." },
+    { q: "Bagaimana cara konsultasi?", a: "Hubungi kami via WhatsApp atau isi form di bagian kontak." },
+  ];
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-gray-950">
+      <Navbar />
+      <main>
+        <Hero />
+        {products.map((p) => (
+          <ProductSection key={p.id} {...p} />
+        ))}
+        <PortfolioSection items={portfolioItems} />
+        <Testimonials items={testimonials} />
+        <FAQ items={faqItems} />
+        <ContactForm />
       </main>
+      <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
     </div>
   );
 }

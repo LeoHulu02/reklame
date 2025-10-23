@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.pixabay.com" },
     ],
   },
+  async rewrites() {
+    return [
+      // Map path baru /asset ke folder lama /assest di public
+      { source: "/asset/:path*", destination: "/assest/:path*" },
+    ];
+  },
 };
 
 export default nextConfig;

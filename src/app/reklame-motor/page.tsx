@@ -12,12 +12,15 @@ import { promises as fs } from "fs";
 export const metadata: Metadata = {
   title: "Reklame Motor — Sukaria Makmur",
   description:
-    "Branding armada motor profesional: desain tajam, bahan premium, pemasangan rapi.",
+    "Reklame motor di Teluk Dalam, Nias Selatan: desain tajam, bahan premium, pemasangan rapi.",
   openGraph: {
     title: "Reklame Motor — Sukaria Makmur",
     description:
-      "Branding armada motor profesional: desain tajam, bahan premium, pemasangan rapi.",
+      "Reklame motor di Teluk Dalam, Nias Selatan: desain tajam, bahan premium, pemasangan rapi.",
     type: "article",
+  },
+  alternates: {
+    canonical: `${brand.siteUrl}/reklame-motor`,
   },
 };
 
@@ -32,7 +35,7 @@ export default async function Page() {
   const imageExts = new Set([".jpg", ".jpeg", ".png", ".webp"]);
   const images = files
     .filter((name) => imageExts.has(path.extname(name).toLowerCase()))
-    .map((name, i) => ({ src: `/assest/reklame-motor/${name}`, alt: `Reklame Motor ${i + 1}` }));
+    .map((name, i) => ({ src: `/assest/reklame-motor/${name}`, alt: `Reklame Motor Teluk Dalam, Nias Selatan ${i + 1}` }));
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -44,7 +47,7 @@ export default async function Page() {
             <div className="relative h-60 sm:h-72 md:h-96 rounded-2xl overflow-hidden border border-zinc-800/60 bg-zinc-900">
               <Image
                 src="/assest/reklame-motor/hasil-reklame-motor-r15.jpeg"
-                alt="Reklame Motor"
+                alt="Reklame Motor Teluk Dalam, Nias Selatan"
                 fill
                 className="object-cover"
               />

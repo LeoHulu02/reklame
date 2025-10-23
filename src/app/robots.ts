@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { brand } from "@/lib/config";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = "https://example.com"; // TODO: ganti ke domain produksi
+  const base = brand.siteUrl;
   return {
     rules: {
       userAgent: "*",

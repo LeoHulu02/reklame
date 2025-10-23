@@ -4,6 +4,7 @@ export const brand = {
   whatsappUrl:
     process.env.NEXT_PUBLIC_WHATSAPP_URL ||
     "https://wa.me/6282286282676?text=Halo%20Sukaria%20Makmur,%20saya%20tertarik%20dengan%20layanan%20reklame.%20Mohon%20penawaran%20dan%20rekomendasi%20terbaik.",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001",
   primaryCtaText: "Dapatkan Penawaran",
   secondaryCtaText: "Konsultasi Gratis",
   color: {

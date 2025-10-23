@@ -32,7 +32,7 @@ export default function ContactForm() {
     <section id="kontak" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-          Hubungi Kami
+          Dapatkan Penawaran & Konsultasi
         </h2>
         <div
           ref={ref}
@@ -82,7 +82,7 @@ export default function ContactForm() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full min-h-40 sm:min-h-48 rounded-md bg-zinc-900 border border-zinc-800/60 px-4 py-3 text-zinc-100 text-base focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-y"
-                  placeholder="Ceritakan kebutuhan reklame Anda..."
+                  placeholder="Tuliskan kebutuhan Anda (produk, ukuran, jumlah, deadline)."
                 />
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -90,7 +90,7 @@ export default function ContactForm() {
                   type="submit"
                   className="w-full sm:w-auto rounded-md bg-orange-600 hover:bg-orange-500 text-white text-base px-6 py-3 transition-colors duration-200 touch-manipulation"
                 >
-                  Kirim via WhatsApp
+                  Dapatkan Penawaran via WhatsApp
                 </button>
                 <a
                   href={brand.whatsappUrl}
@@ -98,7 +98,7 @@ export default function ContactForm() {
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 text-base px-6 py-3 text-center transition-colors duration-200 touch-manipulation"
                 >
-                  Chat Langsung
+                  Chat Langsung di WhatsApp
                 </a>
               </div>
             </div>

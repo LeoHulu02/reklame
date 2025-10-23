@@ -13,7 +13,7 @@ export default function FAQ({ items }: { items: FAQItem[] }) {
   return (
     <section id="faq" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">FAQ</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">FAQ — Jawaban Cepat Sebelum Anda Order</h2>
         <div
           ref={ref}
           className={`mt-6 divide-y divide-zinc-800/60 border border-zinc-800/60 rounded-md transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}

@@ -8,25 +8,25 @@ const products = [
     title: "Reklame Motor",
     href: "/reklame-motor",
     image: "/assest/reklame-motor/reklame-motor-crf.jpeg",
-    desc: "Branding armada motor profesional untuk kampanye dan promosi."
+    desc: "Branding armada motor yang menarik perhatian dan menaikkan awareness di jalan."
   },
   {
     title: "Reklame Helm",
     href: "/reklame-helm",
     image: "/assest/reklame-helm/reklame-helm-motor-yellow.jpeg",
-    desc: "Custom helm dengan finishing tajam dan tahan lama."
+    desc: "Custom helm eye-catching untuk tim/komunitas, kualitas tahan lama."
   },
   {
     title: "Reklame Mantel",
     href: "/reklame-mantel",
     image: "/assest/reklame-motor/bahan-reklame.jpeg",
-    desc: "Apparel promosi untuk tim dan event, rapi dan berkelas."
+    desc: "Apparel promosi seragam untuk tim & event, terlihat profesional."
   },
   {
     title: "Papan Merek",
     href: "/papan-merek",
     image: "/assest/reklame-papan-merek/Reklame-papan-merek.jpeg",
-    desc: "Signage toko yang mencolok dengan material berkualitas."
+    desc: "Papan merek mencolok yang menarik kunjungan dan memperkuat citra toko."
   },
 ];
 
@@ -34,8 +34,8 @@ export default function ProductsGrid() {
   return (
     <section className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60" aria-labelledby="produk-heading">
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
-        <h2 id="produk-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">Produk Unggulan</h2>
-        <p className="mt-2 text-zinc-300">Empat layanan utama untuk kebutuhan branding lokal Anda.</p>
+        <h2 id="produk-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">Layanan Unggulan untuk Tingkatkan Penjualan</h2>
+        <p className="mt-2 text-zinc-300">Pilih solusi branding yang paling cepat menarik perhatian dan mendorong konversi.</p>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((p, i) => (
             <motion.div

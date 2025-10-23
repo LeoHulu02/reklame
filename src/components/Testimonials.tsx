@@ -23,7 +23,7 @@ export default function Testimonials({ items }: { items: Testimonial[] }) {
     <section id="testimonials" className="bg-gray-950 text-zinc-100 border-t border-zinc-800/60">
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Testimonial</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Apa Kata Klien Kami</h2>
         </div>
 
         <div

@@ -15,11 +15,10 @@ export default function Hero() {
         >
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-              Solusi Reklame Premium untuk Motor, Helm, Mantel & Papan Merek
+              Naikkan Penjualan dengan Reklame Premium di {brand.location}
             </h1>
             <p className="mt-4 text-zinc-300 max-w-xl leading-relaxed">
-              Tampil berani dan profesional dengan branding armada,apparel promosi,
-              serta signage toko yang tajam dan tahan lama.
+              Branding motor, helm, mantel, dan papan merek yang tajam, awet, dan terlihat profesional. Cocok untuk kampanye, toko, dan event — siap menarik perhatian.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
@@ -41,7 +40,7 @@ export default function Hero() {
           <div className="relative h-52 sm:h-64 md:h-80 rounded-lg bg-zinc-900 overflow-hidden">
             <Image
               src="/assest/reklame-motor/reklame-motor-cbr150.jpeg"
-              alt="Reklame Motor"
+              alt="Reklame Motor Premium"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"

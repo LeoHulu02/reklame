@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ImageGalleryModal from "@/components/ImageGalleryModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { brand } from "@/lib/config";
+import GalleryToggle from "@/components/GalleryToggle";
+import path from "path";
+import { promises as fs } from "fs";
 
 export const metadata: Metadata = {
   title: "Reklame Motor — Sukaria Makmur",
@@ -16,15 +21,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  const gallery = [
-    "/assest/reklame-motor/reklame-motor-crf.jpeg",
-    "/assest/reklame-motor/reklame-motor-cbr150.jpeg",
-    "/assest/reklame-motor/hasil-reklame-motor-r15.jpeg",
-    "/assest/reklame-motor/reklame-motor-cbr-yellow.jpeg",
-    "/assest/reklame-motor/body-spartpart-motor-keren-merah.jpeg",
-    "/assest/reklame-motor/body-spartpart-motor-keren-hitam.jpeg",
-  ];
+export default async function Page() {
+  const dir = path.join(process.cwd(), "public", "assest", "reklame-motor");
+  let files: string[] = [];
+  try {
+    files = await fs.readdir(dir);
+  } catch (e) {
+    files = [];
+  }
+  const imageExts = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+  const images = files
+    .filter((name) => imageExts.has(path.extname(name).toLowerCase()))
+    .map((name, i) => ({ src: `/assest/reklame-motor/${name}`, alt: `Reklame Motor ${i + 1}` }));
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -42,10 +50,10 @@ export default function Page() {
               />
             </div>
             <h1 className="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">Reklame Motor</h1>
-            <p className="mt-3 text-zinc-300 max-w-2xl">Branding armada motor untuk kampanye dan promosi lapangan, hasil tajam, kuat, dan tahan cuaca.</p>
+            <p className="mt-3 text-zinc-300 max-w-2xl">Branding armada motor yang menarik perhatian di jalan—desain tajam, bahan premium, pemasangan rapi.</p>
             <div className="mt-5 flex gap-3">
-              <a href="https://wa.me/6282286282676?text=Halo%20Sukaria%20Makmur,%20saya%20tertarik%20Reklame%20Motor." className="rounded-md bg-orange-600 hover:bg-orange-500 text-white px-5 py-3">Chat WhatsApp</a>
-              <Link href="/#kontak" className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 px-5 py-3">Konsultasi Gratis</Link>
+              <a href={brand.whatsappUrl} className="rounded-md bg-orange-600 hover:bg-orange-500 text-white px-5 py-3">{brand.primaryCtaText}</a>
+              <Link href="/#kontak" className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 px-5 py-3">{brand.secondaryCtaText}</Link>
             </div>
           </div>
         </section>
@@ -54,13 +62,7 @@ export default function Page() {
         <section className="border-t border-zinc-800/60">
           <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Galeri</h2>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {gallery.map((src, i) => (
-                <div key={i} className="relative h-48 sm:h-40 lg:h-44 rounded-lg bg-zinc-900 overflow-hidden">
-                  <Image src={src} alt={`Motor ${i + 1}`} fill className="object-cover" />
-                </div>
-              ))}
-            </div>
+            <GalleryToggle images={images} initialCount={4} />
           </div>
         </section>
 
@@ -73,7 +75,7 @@ export default function Page() {
               <p><strong>Plat Motor:</strong> Rp 50.000 - Rp 380.000</p>
               <p className="text-sm text-zinc-400 mt-3">*Harga tergantung ukuran, desain, dan bahan yang dipilih</p>
             </div>
-            <a href="https://wa.me/6282286282676?text=Halo%20Sukaria%20Makmur,%20mohon%20info%20harga%20Reklame%20Motor." className="mt-6 inline-block w-full sm:w-auto rounded-md bg-orange-600 hover:bg-orange-500 text-white px-6 py-3 text-center transition-colors touch-manipulation">Pesan via WhatsApp</a>
+            <a href={brand.whatsappUrl} className="mt-6 inline-block w-full sm:w-auto rounded-md bg-orange-600 hover:bg-orange-500 text-white px-6 py-3 text-center transition-colors touch-manipulation">{brand.primaryCtaText}</a>
           </div>
         </section>
       </main>

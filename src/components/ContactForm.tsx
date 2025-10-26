@@ -19,9 +19,16 @@ export default function ContactForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const text = encodeURIComponent(
-      `Halo Reklame, saya ${name}. Layanan: ${service}. Email: ${email}. Pesan: ${message}`
-    );
+    // susun template pesan berbasis input user dengan baris terstruktur
+    const lines = [
+      `Halo ${brand.name},`,
+      `Saya: ${name}`,
+      `Layanan: ${service}`,
+      email ? `Email: ${email}` : null,
+      message ? `Pesan: ${message}` : null,
+      `— dikirim dari Form Kontak Website`,
+    ].filter(Boolean) as string[];
+    const text = encodeURIComponent(lines.join("\n"));
     const url = brand.whatsappUrl.includes("text=")
       ? brand.whatsappUrl
       : `${brand.whatsappUrl}${brand.whatsappUrl.includes("?") ? "&" : "?"}text=${text}`;

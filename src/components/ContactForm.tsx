@@ -21,7 +21,7 @@ export default function ContactForm() {
     e.preventDefault();
     // susun template pesan berbasis input user dengan baris terstruktur
     const lines = [
-      `Halo ${brand.name},`,
+      `Ya'ahowu, ${brand.name}!`,
       `Saya: ${name}`,
       `Layanan: ${service}`,
       email ? `Email: ${email}` : null,

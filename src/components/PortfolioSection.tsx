@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 
 export type PortfolioItem = {
   title: string;
@@ -39,10 +39,7 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
     return items.filter((i) => i.category === activeCategory);
   }, [items, activeCategory]);
 
-  // Reset tampilan ke 4 item saat kategori berubah
-  useEffect(() => {
-    setExpanded(false);
-  }, [activeCategory]);
+  
 
   const visibleItems = useMemo(() => {
     return expanded ? filtered : filtered.slice(0, baseCount);
@@ -62,7 +59,10 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
 
         <div className="mt-4 flex flex-wrap gap-2">
           <button
-            onClick={() => setActiveCategory("Semua")}
+            onClick={() => {
+              setActiveCategory("Semua");
+              setExpanded(false);
+            }}
             className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === "Semua" ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
           >
             Semua
@@ -70,7 +70,10 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
           {categories.map((c) => (
             <button
               key={c}
-              onClick={() => setActiveCategory(c)}
+              onClick={() => {
+                setActiveCategory(c);
+                setExpanded(false);
+              }}
               className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === c ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
             >
               {c}

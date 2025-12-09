@@ -1,11 +1,12 @@
 export const brand = {
   name: "Sukaria Makmur",
-  location: "Teluk Dalam, Nias Selatan",
+  location: "Teluk Dalam, Nias Selatan, Sumatera Utara",
+  mapsUrl: "https://maps.app.goo.gl/1A41ShwuwQUsyKMA7",
   whatsappUrl:
     process.env.NEXT_PUBLIC_WHATSAPP_URL ||
     "https://wa.me/6282286282676?text=Halo%20Sukaria%20Makmur,%20saya%20tertarik%20dengan%20layanan%20reklame.%20Mohon%20penawaran%20dan%20rekomendasi%20terbaik.",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001",
-  primaryCtaText: "Dapatkan Penawaran",
+  primaryCtaText: "Chat WhatsApp Sekarang",
   secondaryCtaText: "Konsultasi Gratis",
   color: {
     background: "#0b1220", // dark gray base

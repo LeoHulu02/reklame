@@ -8,25 +8,25 @@ const products = [
     title: "Reklame Motor",
     href: "/reklame-motor",
     image: "/assest/reklame-motor/reklame-motor-crf.jpeg",
-    desc: "Branding armada motor yang menarik perhatian dan menaikkan awareness di jalan."
+    desc: "Branding motor yang mencolok, rapi, dan awet—siap menarik perhatian."
   },
   {
     title: "Reklame Helm",
     href: "/reklame-helm",
     image: "/assest/reklame-helm/reklame-helm-motor-yellow.jpeg",
-    desc: "Custom helm eye-catching untuk tim/komunitas, kualitas tahan lama."
+    desc: "Custom helm untuk tim/komunitas—warna awet, finishing presisi."
   },
   {
     title: "Reklame Mantel",
     href: "/reklame-mantel",
     image: "/assest/reklame-motor/bahan-reklame.jpeg",
-    desc: "Apparel promosi seragam untuk tim & event, terlihat profesional."
+    desc: "Seragam promosi untuk tim & event—nyaman dipakai, tampak profesional."
   },
   {
     title: "Papan Merek",
     href: "/papan-merek",
     image: "/assest/reklame-papan-merek/Reklame-papan-merek.jpeg",
-    desc: "Papan merek mencolok yang menarik kunjungan dan memperkuat citra toko."
+    desc: "Signage berkelas untuk toko/café/kantor—kuat dan tahan cuaca."
   },
 ];
 

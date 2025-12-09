@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ImageGalleryModal from "@/components/ImageGalleryModal";
+import { altFromSrc } from "@/lib/seo.config";
 
 type GalleryImage = { src: string; alt?: string };
 
@@ -23,9 +24,9 @@ export default function GalleryToggle({
   return (
     <div>
       <ImageGalleryModal
-        images={visible.map((img, i) => ({
+        images={visible.map((img) => ({
           src: img.src,
-          alt: img.alt ?? `Gambar ${i + 1}`,
+          alt: img.alt ?? altFromSrc(img.src),
         }))}
       />
 

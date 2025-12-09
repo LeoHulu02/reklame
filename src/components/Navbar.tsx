@@ -223,6 +223,16 @@ export default function Navbar() {
                   Konsultasi Gratis
                 </Link>
               </div>
+              <div className="mt-3">
+                <a
+                  href={brand.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 text-base px-5 py-3 transition-colors"
+                >
+                  Lokasi (Google Maps)
+                </a>
+              </div>
             </div>
           </div>
         </div>

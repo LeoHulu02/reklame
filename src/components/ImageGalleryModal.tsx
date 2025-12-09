@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { altFromSrc } from "@/lib/seo.config";
 
 type GalleryImage = { src: string; alt?: string };
 
@@ -21,7 +22,7 @@ export default function ImageGalleryModal({ images }: { images: GalleryImage[] }
             onClick={() => setActiveIndex(i)}
             className="relative h-48 sm:h-40 lg:h-44 rounded-lg bg-zinc-900 overflow-hidden w-full group border border-zinc-800/60"
           >
-            <Image src={img.src} alt={img.alt || `Image ${i + 1}`} fill className="object-cover group-hover:scale-105 transition-transform" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={60} />
+            <Image src={img.src} alt={img.alt || altFromSrc(img.src)} fill className="object-cover group-hover:scale-105 transition-transform" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={60} />
           </button>
         ))}
       </div>
@@ -41,7 +42,7 @@ export default function ImageGalleryModal({ images }: { images: GalleryImage[] }
             <div className="relative max-h-[80vh] overflow-auto rounded-lg bg-black">
               <Image
                 src={images[activeIndex].src}
-                alt={images[activeIndex].alt || `Image ${activeIndex + 1}`}
+                alt={images[activeIndex].alt || altFromSrc(images[activeIndex].src)}
                 width={1600}
                 height={900}
                 className="mx-auto select-none"

@@ -5,18 +5,19 @@ import ImageGalleryModal from "@/components/ImageGalleryModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { brand } from "@/lib/config";
+import Script from "next/script";
+import { buildMetadata, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo.config";
+import FAQ from "@/components/FAQ";
 
-export const metadata: Metadata = {
-  title: "Papan Merek — Sukaria Makmur",
-  description:
-    "Papan merek dan signage profesional: bahan kuat, finishing rapi, tampilan berkelas.",
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata({
     title: "Papan Merek — Sukaria Makmur",
-    description:
-      "Papan merek dan signage profesional: bahan kuat, finishing rapi, tampilan berkelas.",
-    type: "article",
-  },
-};
+    description: "Papan merek dan signage profesional: bahan kuat, finishing rapi, tampilan berkelas.",
+    path: "/papan-merek",
+    keywords: ["papan merek", "signage", "neon box", "branding toko", "Nias Selatan"],
+    ogImage: "/assest/reklame-papan-merek/Reklame-papan-merek.jpeg",
+  });
+}
 
 export default function Page() {
   return (
@@ -34,7 +35,7 @@ export default function Page() {
               />
             </div>
             <h1 className="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">Papan Merek</h1>
-            <p className="mt-3 text-zinc-300 max-w-2xl">Signage dan papan merek untuk toko, café, dan kantor — tampilan profesional yang menarik perhatian pelanggan. Bahan kuat, finishing rapi, dan awet.</p>
+            <p className="mt-3 text-zinc-300 max-w-2xl">Signage dan papan merek untuk toko, café, dan kantor—tampilan profesional yang menarik perhatian. Bahan kuat, finishing rapi, tahan cuaca.</p>
             <div className="mt-5 flex gap-3">
               <a href={brand.whatsappUrl} className="rounded-md bg-orange-600 hover:bg-orange-500 text-white px-5 py-3">{brand.primaryCtaText}</a>
               <Link href="/#kontak" className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 px-5 py-3">{brand.secondaryCtaText}</Link>
@@ -75,7 +76,22 @@ export default function Page() {
             <a href={brand.whatsappUrl} className="mt-6 inline-block w-full sm:w-auto rounded-md bg-orange-600 hover:bg-orange-500 text-white px-6 py-3 text-center transition-colors touch-manipulation">{brand.primaryCtaText}</a>
           </div>
         </section>
+
+        <section className="border-t border-zinc-800/60">
+          <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">FAQ Singkat</h2>
+            <FAQ
+              items={[
+                { q: "Apakah tahan cuaca?", a: "Ya, bahan dan finishing kami tahan hujan dan panas." },
+                { q: "Desain bisa custom?", a: "Bisa sesuai kebutuhan toko/café/kantor Anda." },
+                { q: "Instalasi bagaimana?", a: "Tim kami pasang rapi dan bersih di lokasi Anda." },
+              ]}
+            />
+          </div>
+        </section>
       </main>
+      <Script id="breadcrumbs-papan-merek" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", item: `${brand.siteUrl}/` }, { name: "Papan Merek", item: `${brand.siteUrl}/papan-merek` }])) }} />
+      <Script id="service-papan-merek" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({ name: "Papan Merek", description: "Signage dan papan merek untuk toko, café, dan kantor.", url: `${brand.siteUrl}/papan-merek`, priceRange: "450000-5000000", serviceType: "Papan merek dan signage" })) }} />
       <Footer />
     </div>
   );

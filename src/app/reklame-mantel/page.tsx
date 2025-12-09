@@ -5,18 +5,19 @@ import ImageGalleryModal from "@/components/ImageGalleryModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { brand } from "@/lib/config";
+import Script from "next/script";
+import { buildMetadata, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo.config";
+import FAQ from "@/components/FAQ";
 
-export const metadata: Metadata = {
-  title: "Reklame Mantel — Sukaria Makmur",
-  description:
-    "Apparel promosi berkualitas: sablon presisi, material nyaman, rapi untuk tim dan event.",
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata({
     title: "Reklame Mantel — Sukaria Makmur",
-    description:
-      "Apparel promosi berkualitas: sablon presisi, material nyaman, rapi untuk tim dan event.",
-    type: "article",
-  },
-};
+    description: "Apparel promosi berkualitas: sablon presisi, material nyaman, rapi untuk tim dan event.",
+    path: "/reklame-mantel",
+    keywords: ["reklame mantel", "seragam promosi", "sablon presisi", "Nias Selatan"],
+    ogImage: "/assest/reklame-motor/bahan-reklame.jpeg",
+  });
+}
 
 export default function Page() {
   return (
@@ -34,7 +35,7 @@ export default function Page() {
               />
             </div>
             <h1 className="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">Reklame Mantel</h1>
-            <p className="mt-3 text-zinc-300 max-w-2xl">Seragam/mantel promosi untuk tim dan event — sablon presisi, material nyaman, rapi. Tampil profesional dan tingkatkan kepercayaan pelanggan.</p>
+            <p className="mt-3 text-zinc-300 max-w-2xl">Seragam promosi untuk tim dan event—sablon presisi, material nyaman, rapi. Tampil profesional dan percaya diri.</p>
             <div className="mt-5 flex gap-3">
               <a href={brand.whatsappUrl} className="rounded-md bg-orange-600 hover:bg-orange-500 text-white px-5 py-3">{brand.primaryCtaText}</a>
               <Link href="/#kontak" className="rounded-md border border-zinc-700 text-zinc-100 hover:bg-zinc-900 px-5 py-3">{brand.secondaryCtaText}</Link>
@@ -71,7 +72,22 @@ export default function Page() {
             <a href={brand.whatsappUrl} className="mt-6 inline-block w-full sm:w-auto rounded-md bg-orange-600 hover:bg-orange-500 text-white px-6 py-3 text-center transition-colors touch-manipulation">{brand.primaryCtaText}</a>
           </div>
         </section>
+
+        <section className="border-t border-zinc-800/60">
+          <div className="mx-auto max-w-7xl px-6 py-10 md:py-14">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">FAQ Singkat</h2>
+            <FAQ
+              items={[
+                { q: "Bahan nyaman dipakai?", a: "Ya, kami pakai material yang nyaman dan awet untuk aktivitas harian." },
+                { q: "Ukuran lengkap?", a: "Tersedia S–XXL, dan bisa custom bila diperlukan." },
+                { q: "Proses desain?", a: "Kami bantu revisi desain sampai cocok sebelum produksi." },
+              ]}
+            />
+          </div>
+        </section>
       </main>
+      <Script id="breadcrumbs-reklame-mantel" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", item: `${brand.siteUrl}/` }, { name: "Reklame Mantel", item: `${brand.siteUrl}/reklame-mantel` }])) }} />
+      <Script id="service-reklame-mantel" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({ name: "Reklame Mantel", description: "Seragam promosi untuk tim dan event.", url: `${brand.siteUrl}/reklame-mantel`, priceRange: "10000-400000", serviceType: "Apparel promosi" })) }} />
       <Footer />
     </div>
   );

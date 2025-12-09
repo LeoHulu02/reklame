@@ -15,10 +15,10 @@ export default function Hero() {
         >
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-              Naikkan Penjualan dengan Reklame Premium di {brand.location}
+              Jasa Reklame Profesional di {brand.location}
             </h1>
             <p className="mt-4 text-zinc-300 max-w-xl leading-relaxed">
-              Branding motor, helm, mantel, dan papan merek yang tajam, awet, dan terlihat profesional. Cocok untuk kampanye, toko, dan event — siap menarik perhatian.
+              Ya&#39;ahowu! Kami bantu branding motor, helm, mantel, dan papan merek—desain rapi, bahan awet, pemasangan bersih. Cocok untuk usaha, toko, dan acara.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
@@ -35,6 +35,20 @@ export default function Hero() {
               >
                 {brand.secondaryCtaText}
               </Link>
+            </div>
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+              <div className="flex items-center gap-2 text-zinc-300">
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+                Lead time 3–7 hari
+              </div>
+              <div className="flex items-center gap-2 text-zinc-300">
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+                Garansi bahan & finishing
+              </div>
+              <div className="flex items-center gap-2 text-zinc-300">
+                <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+                Tahan cuaca pesisir
+              </div>
             </div>
           </div>
           <div className="relative h-52 sm:h-64 md:h-80 rounded-lg bg-zinc-900 overflow-hidden">

@@ -42,20 +42,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [locality, region] = brand.location.split(",").map((s) => s.trim());
+  const parts = brand.location.split(",").map((s) => s.trim());
+  const locality = parts[0] || brand.location;
+  const region = parts.slice(1).join(", ") || undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: brand.name,
     url: brand.siteUrl,
     areaServed: brand.location,
+    hasMap: brand.mapsUrl,
     address: {
       "@type": "PostalAddress",
       addressLocality: locality || brand.location,
       addressRegion: region || undefined,
       addressCountry: "ID",
     },
-    sameAs: [brand.whatsappUrl],
+    sameAs: [brand.whatsappUrl, brand.mapsUrl].filter(Boolean),
   };
 
   return (

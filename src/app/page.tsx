@@ -6,6 +6,27 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { buildMetadata, faqJsonLd } from "@/lib/seo.config";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata({
+    title: "Jasa Reklame Motor Branding — Sukaria Makmur",
+    description:
+      "Jasa reklame motor, helm, mantel, dan papan merek di Teluk Dalam, Nias Selatan. Desain tajam, produksi berkualitas, pemasangan rapi.",
+    path: "/",
+    keywords: [
+      "jasa reklame motor",
+      "branding motor",
+      "reklame helm",
+      "papan merek",
+      "Nias Selatan",
+      "Teluk Dalam",
+    ],
+    ogImage: "/assest/reklame-motor/reklame-motor-cbr150.jpeg",
+  });
+}
 
 export default function Page() {
 
@@ -104,6 +125,7 @@ export default function Page() {
         ]}
       />
       <FAQ items={faqItems} />
+      <Script id="faq-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqItems)) }} />
       <ContactForm />
       <Footer />
     </div>

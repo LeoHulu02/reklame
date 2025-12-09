@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description:
       "Jasa reklame premium di Teluk Dalam, Nias Selatan: desain tajam, produksi berkualitas, eksekusi cepat untuk brand berani.",
   },
+  verification: {
+    google: "7G8AZP44j6FcDfLbOol-qUmHkZiHIptgyjs7Xbj5Ero",
+  },
 };
 
 export default function RootLayout({

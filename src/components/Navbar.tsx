@@ -103,7 +103,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-gray-950/85 backdrop-blur supports-[backdrop-filter]:bg-gray-950/70">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-gray-950/85 backdrop-blur supports-backdrop-filter:bg-gray-950/70">
         <div className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
           <Link href="/" className="font-semibold tracking-tight text-zinc-100">Reklame</Link>
 

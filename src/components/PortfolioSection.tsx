@@ -63,7 +63,7 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
               setActiveCategory("Semua");
               setExpanded(false);
             }}
-            className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === "Semua" ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
+            className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === "Semua" ? "bg-linear-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
           >
             Semua
           </button>
@@ -74,7 +74,7 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
                 setActiveCategory(c);
                 setExpanded(false);
               }}
-              className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === c ? "bg-gradient-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
+              className={`px-3 py-1 rounded-full border border-zinc-800/60 text-sm transition-colors ${activeCategory === c ? "bg-linear-to-r from-orange-600 to-pink-600 text-white" : "bg-transparent text-zinc-300 hover:text-zinc-100"}`}
             >
               {c}
             </button>
@@ -124,7 +124,7 @@ export default function PortfolioSection({ items }: { items: PortfolioItem[] }) 
                   <div className={`absolute inset-0 transition-opacity duration-300 ${loaded[idx] ? "opacity-0" : "opacity-100"} bg-zinc-800/40 animate-pulse`} />
                 </div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="absolute bottom-2 left-2 text-xs text-zinc-200">
                 {item.title}
               </div>

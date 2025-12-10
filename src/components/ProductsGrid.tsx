@@ -55,7 +55,7 @@ export default function ProductsGrid() {
                     sizes="(max-width:1024px) 50vw, 25vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-semibold">{p.title}</h3>
